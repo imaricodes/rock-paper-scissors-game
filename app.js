@@ -67,9 +67,16 @@ function playRound (playerSelection, computerSelection) {
         return "tie";
         //console.log (playerSelection + " " + computerSelection + " " + "tie")}
         };
-};
+}
 
-console.log(playRound(playerSelection(), computerSelection));
+function game (){
+    //clicking "play button should initate this function"
+    let round = playRound(playerSelection(), computerSelection);
+    console.log("The winner is..." + round);
+}
+
+game();
+//console.log(playRound(playerSelection(), computerSelection));
 
 
 
