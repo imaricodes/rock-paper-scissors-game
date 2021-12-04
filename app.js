@@ -3,13 +3,13 @@
 //***** computerPlay() returns random computer play *****//
 
 
-function computerPlay () {
+let computerSelection = function computerPlay () {
     
     function randomNumberGenerator (min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
         }  
 
-    const randomNumberGeneratorResult = randomNumberGenerator(1,3);
+    let randomNumberGeneratorResult = randomNumberGenerator(1,3);
     
     if (randomNumberGeneratorResult === 1){
     return "rock";
@@ -20,12 +20,9 @@ function computerPlay () {
             }
 };
 
-const computerSelection = computerPlay();
-
-
 //***** playerSelection() returns player chioce.. for now randomNumber is typed
 
-const playerSelection = () => {
+let playerSelection = function () {
     //return prompt("enter choice");
     return "rock";
 }
@@ -37,46 +34,50 @@ function playRound (playerSelection, computerSelection) {
     
     if (playerSelection === "rock" && computerSelection ==="scissors") {
         //console.log(playerSelection + " " + computerSelection + " " + "player wins")
-        return "player wins";
+        return playerSelection + " " + computerSelection + " " + "player wins";
     } 
     else if (playerSelection === "rock" && computerSelection ==="paper"){
         //console.log(playerSelection + " " + computerSelection + " " + "computer wins")
-        return "computer wins";
+        return playerSelection + " " + computerSelection + " " + "computer wins";
     }
 
     else if (playerSelection === "paper" && computerSelection ==="rock") {
         //console.log(playerSelection + " " + computerSelection + " " + "player wins")
-        return "player wins";
+        return playerSelection + " " + computerSelection + " " + "player wins";
     }
 
     else if (playerSelection === "paper" && computerSelection ==="scissors") {
         //console.log(playerSelection + " " + computerSelection + " " + "computer wins")
-        return "computer wins";
+        return playerSelection + " " + computerSelection + " " + "computer wins";
     }
     else if (playerSelection === "scissors" && computerSelection ==="rock") {
         //console.log(playerSelection + " " + computerSelection + " " + "computer wins")
-        return "computer wins";
+        return playerSelection + " " + computerSelection + " " + "computer wins";
     }
 
     else if (playerSelection === "scissors" && computerSelection ==="paper") {
         //console.log(playerSelection + " " + computerSelection + " " + "player wins")
-        return "player wins";
+        return playerSelection + " " + computerSelection + " " + "player wins";
     }
 
     else {
-        return "tie";
         //console.log (playerSelection + " " + computerSelection + " " + "tie")}
+        return playerSelection + " " + computerSelection + " " + "tie";
         };
 }
 
 function game (){
-    //clicking "play button should initate this function"
-    let round = playRound(playerSelection(), computerSelection);
-    console.log("The winner is..." + round);
+    let rounds = [];
+    for (let index = 0; index < 5; index++) {
+        let round = playRound(playerSelection(),computerSelection());
+        rounds.push(round);       
+    }
+    console.log(rounds); 
 }
 
 game();
-//console.log(playRound(playerSelection(), computerSelection));
+
+
 
 
 
