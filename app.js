@@ -33,42 +33,43 @@ const playerSelection = () => {
 
 //***** playRound *****//
 
-function playRound (playerSelection, computerSelection){
+function playRound (playerSelection, computerSelection) {
     
     if (playerSelection === "rock" && computerSelection ==="scissors") {
-        console.log(playerSelection + " " + computerSelection + " " + "player wins")
+        //console.log(playerSelection + " " + computerSelection + " " + "player wins")
+        return "player wins";
     } 
     else if (playerSelection === "rock" && computerSelection ==="paper"){
-        console.log(playerSelection + " " + computerSelection + " " + "computer wins")
+        //console.log(playerSelection + " " + computerSelection + " " + "computer wins")
+        return "computer wins";
     }
 
     else if (playerSelection === "paper" && computerSelection ==="rock") {
-        console.log(playerSelection + " " + computerSelection + " " + "player wins")
+        //console.log(playerSelection + " " + computerSelection + " " + "player wins")
+        return "player wins";
     }
 
     else if (playerSelection === "paper" && computerSelection ==="scissors") {
-        console.log(playerSelection + " " + computerSelection + " " + "computer wins")
+        //console.log(playerSelection + " " + computerSelection + " " + "computer wins")
+        return "computer wins";
     }
     else if (playerSelection === "scissors" && computerSelection ==="rock") {
-        console.log(playerSelection + " " + computerSelection + " " + "computer wins")
+        //console.log(playerSelection + " " + computerSelection + " " + "computer wins")
+        return "computer wins";
     }
 
     else if (playerSelection === "scissors" && computerSelection ==="paper") {
-        console.log(playerSelection + " " + computerSelection + " " + "player wins")
+        //console.log(playerSelection + " " + computerSelection + " " + "player wins")
+        return "player wins";
     }
 
-    else {console.log (playerSelection + " " + computerSelection + " " + "tie")}
-
-    
-    
-    // if (playerSelection === computerSelection) {
-    //     console.log ("tie");
-    // }
-    // else {console.log( "not a tie")};
-    //return playerSelection + computerSelection;   
+    else {
+        return "tie";
+        //console.log (playerSelection + " " + computerSelection + " " + "tie")}
+        };
 };
 
-playRound(playerSelection(), computerSelection);
+console.log(playRound(playerSelection(), computerSelection));
 
 
 
