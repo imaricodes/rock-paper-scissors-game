@@ -2,23 +2,11 @@
 
 //***** computerPlay() returns random computer play *****//
 
+let computerSelection = function computerPlay(){
+    const choicesArray = ["rock", "paper", "scissors"]
+    return choicesArray[Math.floor(Math.random()*choicesArray.length)]
 
-let computerSelection = function computerPlay () {
-    
-    function randomNumberGenerator (min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-        }  
-
-    let randomNumberGeneratorResult = randomNumberGenerator(1,3);
-    
-    if (randomNumberGeneratorResult === 1){
-    return "rock";
-    } else if (randomNumberGeneratorResult === 2){
-        return "paper";}
-            else if (randomNumberGeneratorResult === 3){
-                return "scissors";
-            }
-};
+}
 
 //***** playerSelection() returns player chioce.. for now randomNumber is typed
 
