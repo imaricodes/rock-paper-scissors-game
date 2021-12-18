@@ -8,11 +8,13 @@ let computerSelection = function computerPlay(){
 
 }
 
-//***** playerSelection() returns player chioce.. for now randomNumber is typed
+//***** playerSelection() returns player chioce.. for now player selection is typed
 
 let playerSelection = function () {
     //return prompt("enter choice");
-    return "rock";
+    function check(){console.log("rock") };
+    document.getElementById("player-btn").addEventListener('click', check);
+    //return "rock";
 }
 
 
