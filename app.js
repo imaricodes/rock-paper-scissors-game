@@ -1,3 +1,29 @@
+let playerSelection = function () {
+    let btns = document.querySelectorAll('#pickRock, #pickPaper, #pickScissors');
+
+for (i of btns) {
+    i.addEventListener('click', function(e) {
+      // let humanTurnResult = {
+      //   player: 'Human',
+      //   choice: `${e.target.id}`,
+      //   code: Number(i)}
+      
+      if  (e.target.id === "pickPaper"){
+        document.getElementById("pickScissors").remove();
+        document.getElementById("pickRock").remove();
+        //document.getElementById("pickPaper").remove();
+        console.log(btns);
+        console.log("choice made");
+        }
+            }        
+  );
+  }
+    
+}
+
+
+
+
 
 
 //***** computerPlay() returns random computer play *****//
@@ -10,12 +36,12 @@ let computerSelection = function computerPlay(){
 
 //***** playerSelection() returns player chioce.. for now player selection is typed
 
-let playerSelection = function () {
-    //return prompt("enter choice");
-    function check(){console.log("rock") };
-    document.getElementById("player-btn").addEventListener('click', check);
-    //return "rock";
-}
+// let playerSelection = function () {
+//     //return prompt("enter choice");
+//     function check(){console.log("rock") }; 
+//     document.getElementById("player-btn").addEventListener('click', check);
+//     //return "rock";
+// }
 
 
 //***** playRound *****//
