@@ -17,8 +17,7 @@ for (i of btns) {
         }
             }        
   );
-  }
-    
+  }  
 }
 
 
@@ -113,7 +112,15 @@ function game () {
         console.log(rounds); //temporary
 }
 
-game();
+
+function startGame(){
+    let start = document.getElementById("play").addEventListener('click', game);
+}
+
+
+
+
+startGame();
 
 
 
