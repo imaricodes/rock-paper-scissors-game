@@ -8,6 +8,8 @@ for (i of btns) {
       //   choice: `${e.target.id}`,
       //   code: Number(i)}
       
+    
+      
       if  (e.target.id === "pickPaper"){
         document.getElementById("pickScissors").remove();
         document.getElementById("pickRock").remove();
@@ -114,8 +116,10 @@ function game () {
 
 
 function startGame(){
-    let start = document.getElementById("play").addEventListener('click', game);
+    let start = document.getElementById("play").addEventListener('click', playerSelection);
 }
+
+
 
 
 
