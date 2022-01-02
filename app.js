@@ -14,3 +14,14 @@ function playRound(playerSelection, computerSelection){
 
 
 let playerChoiceButtons = document.querySelectorAll(".player-choice-btn");
+
+let playerChoiceButtons = document.querySelectorAll(".player-choice-btn");
+    
+playerChoiceButtons.forEach((button) => {
+    button.addEventListener('click', (e)=> {
+        playerSelection = e.target.id;
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+            
+    });
+});
