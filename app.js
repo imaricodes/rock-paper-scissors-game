@@ -13,3 +13,4 @@ function playRound(playerSelection, computerSelection){
 };
 
 
+let playerChoiceButtons = document.querySelectorAll(".player-choice-btn");
