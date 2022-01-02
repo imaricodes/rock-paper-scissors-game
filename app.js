@@ -1,5 +1,3 @@
-let playerSelection = function () {
-    let btns = document.querySelectorAll('#pickRock, #pickPaper, #pickScissors');
 
 for (i of btns) {
     i.addEventListener('click', function(e) {
@@ -23,7 +21,29 @@ for (i of btns) {
 }
 
 
+let playerSelection = function () {
+    let btns = document.querySelectorAll('#pickRock, #pickPaper, #pickScissors');
 
+    for (i of btns) {
+        i.addEventListener('click', function(e) {
+        // let humanTurnResult = {
+        //   player: 'Human',
+        //   choice: `${e.target.id}`,
+        //   code: Number(i)}
+        
+        if  (e.target.id === "pickPaper"){
+            document.getElementById("pickScissors").remove();
+            document.getElementById("pickRock").remove();
+            //document.getElementById("pickPaper").remove();
+            console.log(btns);
+            console.log("choice made");
+            return e.target.id;
+            }     
+                }        
+        );
+
+                    }//end for loop  
+}//end playerSelection function
 
 
 
@@ -83,15 +103,17 @@ function playRound (playerSelection, computerSelection) {
         }
     }
 
-function game () {
+async function game () {
     
     let rounds = []; //temporary
     let playerScore = 0;
     let computerScore = 0;
-    
-    for (let index = 0; index < 5; index++) {
-        let round = playRound(playerSelection(),computerSelection());
 
+
+    //round loop.. needs to wait each time for player selction to finish
+    for (let index = 0; index < 1; index++) {
+
+        let round = playRound(playerSelection(),computerSelection());
         if (round === "player") {
             playerScore += 1;
         } else if (round === "computer") {
@@ -101,8 +123,10 @@ function game () {
         console.log(`Player score is ${playerScore}`);
         console.log(`Computer score is ${computerScore}`);
         rounds.push(round); //temporary       
-    }
+    } //end of round loop
     
+
+    //calculate final score
     if (computerScore > playerScore) {
         console.log("Computer wins")
     } else if (computerScore < playerScore ){
@@ -110,6 +134,9 @@ function game () {
     } else {
             console.log("It's a tie")
         }
+        //end calculate final score
+
+
 
         console.log(rounds); //temporary
 }
