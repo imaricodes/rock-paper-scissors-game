@@ -7,7 +7,7 @@ function computerPlay (){
     return gameChoices[Math.floor(Math.random()*gameChoices.length)]
 }
 
-//this needs to return winner for use by a score keeping function
+//returns a winner
 function playRound(playerSelection, computerSelection){
     if (computerSelection == playerSelection){
         return 'tie'
@@ -15,15 +15,10 @@ function playRound(playerSelection, computerSelection){
         (computerSelection === "scissors" && playerSelection === "paper") ||
         (computerSelection === "paper" && playerSelection === "rock"))
             {
-                //console.log('player wins');
                 return 'computer wins'
             } else {
-                //console.log("inconclusive")
                 return 'player wins'
                 };
-
-    //console.log(score);
-    
 };
 
 
