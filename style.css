@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: column; 
+   
+  }
+
+/* I resorted to margin-top: auto on the content section  along with margin-top: auto on the footer to keep the content section in the center of the page. A leaner fix on the solution page is to apply commented out lines below (justify-content: center and flex: 1. */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    /* justify-content: center;
+    flex: 1; */
+  }
+
+  .footer {
+    display: flex;
+    margin-top: auto;
+    background-color: #eeeeee;
+    padding: 20px;
+  }
+
+  .game-buttons{
+      background-color: red;
+      border-style: 3px solid green;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      
+  }
+
+  .title {
+      background-color: green;
+      margin-bottom: 50px;
+  }
