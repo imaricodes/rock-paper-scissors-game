@@ -44,10 +44,13 @@ const playButton = document.getElementById('play');
 
 const resetBtn = document.getElementById('reset');
 
+const gameInstructions = document.querySelector('.instructions');
+
 playButton.addEventListener('click', function(event){
    //pass game buttons div to var
    //selectGamebuttons.classList.toggle('hidden');
    playButton.classList.toggle('hidden');
+   gameInstructions.classList.toggle('hidden');
    selectGamebuttons.classList.toggle('hidden');
    
    console.log(selectGamebuttons.classList);
@@ -59,6 +62,7 @@ resetBtn.addEventListener('click', function(event){
    //pass game buttons div to var
    console.log(selectGamebuttons.classList);
    selectGamebuttons.classList.toggle('hidden');
+   gameInstructions.classList.toggle('hidden');
    playButton.classList.toggle('hidden');
     console.log('reset Button Clicked');
 });
