@@ -34,3 +34,32 @@ playerChoiceButtons.forEach((button) => {
         console.log(result);     
     });
 });
+
+
+// HTML functions
+
+const selectGamebuttons = document.querySelector('.game-buttons');
+
+const btn = document.getElementById('play');
+
+btn.addEventListener('click', function(event){
+   //pass game buttons div to var
+   selectGamebuttons.classList.toggle('hidden');
+   
+   console.log(selectGamebuttons.classList);
+    console.log('Button Clicked');
+});
+
+const resetBtn = document.getElementById('reset');
+
+resetBtn.addEventListener('click', function(event){
+   //pass game buttons div to var
+   selectGamebuttons.classList.toggle('hidden');
+   console.log(selectGamebuttons.classList);
+    console.log('Button Clicked');
+});
+
+
+
+
+

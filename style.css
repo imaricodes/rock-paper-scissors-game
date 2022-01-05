@@ -13,7 +13,7 @@
    
   }
 
-/* I resorted to margin-top: auto on the content section  along with margin-top: auto on the footer to keep the content section in the center of the page. A leaner fix on the solution page is to apply commented out lines below (justify-content: center and flex: 1. */
+
 .content {
     display: flex;
     flex-direction: column;
@@ -23,11 +23,13 @@
     flex: 1; */
   }
 
-  .footer {
-    display: flex;
-    margin-top: auto;
-    background-color: #eeeeee;
-    padding: 20px;
+
+  .game-info-container {
+      width: auto;
+      background-color: gray;
+      /* align-items: flex-end; */
+      margin-top: 150px;
+      
   }
 
   .game-buttons{
@@ -36,10 +38,32 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      /* margin-bottom: 150px; */
+      
       
   }
+
+  .footer {
+    display: flex;
+    margin-top: auto;
+    background-color: #eeeeee;
+    padding: 20px;
+  }
+
 
   .title {
       background-color: green;
       margin-bottom: 50px;
+  }
+
+  .player-choice-btn {
+      padding: 10px 25px 10px 25px;
+  }
+
+  #play {
+    padding: 10px 25px 10px 25px;
+  }
+
+  .hidden {
+      display: none;
   }
