@@ -1,5 +1,6 @@
 
 
+// GAME PLAY FUNCTIONS
 
 //returns computers pick
 function computerPlay (){
@@ -36,7 +37,7 @@ playerChoiceButtons.forEach((button) => {
 });
 
 
-// HTML functions
+// DOM FUNCTIONS
 
 const selectGamebuttons = document.querySelector('.game-buttons');
 
