@@ -48,7 +48,7 @@ function updateGameScore (result){
     
 };
 
-function checkIfGameOver(result) {
+function checkIfGameOver() {
     if (gameScore.player + gameScore.computer === 3){
         console.log("Round ___ over!");
     }
