@@ -55,6 +55,11 @@ function checkIfGameOver() {
     
 };
 
+function hidePlayerChoiceButtons() {
+    gameButtons.classList.toggle('hidden');
+    
+};
+
 
 //game played here
 let playerChoiceButtons = document.querySelectorAll(".player-choice-btn");
@@ -71,17 +76,26 @@ playerChoiceButtons.forEach((button) => {
         // report winner if (there is a winner){exit} if not, contiue
         checkIfGameOver(result);
         
+        //hide div.gameButtons and unhide next screen
+        hidePlayerChoiceButtons();
+
+        //wait a few seconds before showing game buttons again... later, instead, the next step of the process will be called...showing the winner of the round
+        setTimeout(hidePlayerChoiceButtons, 5000);
+        
+
+
         console.log(computerSelection);
         console.log(playerSelection);
         console.log(result);
-        console.log (gameScore);     
+        console.log (gameScore);
+            
     });
 });
 
 
 //******* DOM FUNCTIONS *******//
 
-const selectGamebuttons = document.querySelector('.game-buttons');
+const gameButtons = document.querySelector('.game-buttons');
 const gameInfo = document.querySelector('.game-info-container');
 
 const playButton = document.getElementById('play-btn');
@@ -96,10 +110,10 @@ playButton.addEventListener('click', function(event){
    //selectGamebuttons.classList.toggle('hidden');
    playButton.classList.toggle('hidden');
    gameInstructions.classList.toggle('hidden');
-   selectGamebuttons.classList.toggle('hidden');
+   gameButtons.classList.toggle('hidden');
    gameInfo.classList.toggle('hidden');
    
-   console.log(selectGamebuttons.classList);
+   console.log(gameButtons.classList);
     console.log('Button Clicked');
 });
 
@@ -113,8 +127,8 @@ playButton.addEventListener('click', function(event){
 
 resetBtn.addEventListener('click', function(event){
    //pass game buttons div to var
-   console.log(selectGamebuttons.classList);
-   selectGamebuttons.classList.toggle('hidden');
+   console.log(gameButtons.classList);
+   gameButtons.classList.toggle('hidden');
    gameInstructions.classList.toggle('hidden');
    playButton.classList.toggle('hidden');
    gameInfo.classList.toggle('hidden');
