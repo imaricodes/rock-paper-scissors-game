@@ -28,14 +28,20 @@
 
   .game-info-container {
       width: auto;
-      background-color: gray;
+      /* background-color: gray; */
       display: flex;
       width: 100%;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      position: absolute;
-      margin-top: 20px;
+      border: 2px solid blue;
+      
+     
+    }
+
+    .round-play-display{
+      align-items: flex-start;
+      border: 2px solid blue;
     }
     
     .round-indicator {
@@ -46,25 +52,27 @@
 
   .scoreBox{
     display: flex;
-    
+    gap: 20px;
 
   }
 
-  .game-buttons{
+  .score-display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    background-color: greenyellow;
+  }
+  .game-buttons-container{
       background-color: red;
-      border-style: 3px solid green;
+      
       width: auto;
       display: flex;
       justify-content: center;
       margin-bottom: 200px;
-     
- 
+      border: 2px solid blue;
   }
 
-.score-display{
-  width: auto;
-  background-color: greenyellow;
-}
 
   .footer {
     display: flex;
@@ -79,8 +87,9 @@
     
   }
 
-  .player-choice-btn {
+  .rockPaperScissors-btn {
       padding: 10px 25px 10px 25px;
+      
   }
 
   #play-btn {

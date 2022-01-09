@@ -6,6 +6,43 @@ let gameScore = {
     round: 0
 };
 
+const playButton = document.getElementById('play-btn');
+
+const gameButtonsContainer = document.querySelector('.game-buttons-container');
+
+const rockPaperScissorsButtons = document.querySelectorAll(".rockPaperScissors-btn");
+
+const gameInstructions = document.querySelector('.instructions');
+
+const playerVsComputer = document.querySelector('.playerVsComputer-display');
+
+const winnerDisplay = document.querySelector('.winner-display');
+
+const nextRound = document.querySelector('.next-round-message');
+
+const gameInfo = document.querySelector('.game-info-container');
+
+const resetBtn = document.getElementById('reset');
+
+//SHOW HIDE TOGGLE FUNCTIONS
+function toggleGameButtons (){
+    gameButtonsContainer.classList.toggle('hidden');
+    //togglePlayerVsComputerDisplay();  
+}
+
+function togglePlayerVsComputerDisplay() {
+    playerVsComputer.classList.toggle('hidden');
+}
+
+function toggleDisplayWinner (){
+    winnerDisplay.classList.toggle('hidden');
+    
+}
+
+function toggleNextRoundMessage() {
+    nextRound.classList.toggle('hidden');
+}
+
 
 //******* GAME PLAY FUNCTIONS *******//
 
@@ -55,85 +92,78 @@ function checkIfGameOver() {
     
 };
 
-function hidePlayerChoiceButtons() {
-    gameButtons.classList.toggle('hidden');
-    
-};
 
 
 //game played here
-let playerChoiceButtons = document.querySelectorAll(".player-choice-btn");
-    
-playerChoiceButtons.forEach((button) => {
-    button.addEventListener('click', (e)=> {
-        let playerSelection = e.target.id;
-        let computerSelection = computerPlay();
-        let result = playRound(playerSelection, computerSelection);
-        
-        //this updates and reports score
-        updateGameScore(result);
 
-        // report winner if (there is a winner){exit} if not, contiue
-        checkIfGameOver(result);
-        
-        //hide div.gameButtons and unhide next screen
-        hidePlayerChoiceButtons();
-
-        //wait a few seconds before showing game buttons again... later, instead, the next step of the process will be called...showing the winner of the round
-        setTimeout(hidePlayerChoiceButtons, 5000);
-        
+//all of this will be wrapped in a loop
 
 
-        console.log(computerSelection);
-        console.log(playerSelection);
-        console.log(result);
-        console.log (gameScore);
+
+
+ 
+
+
+
+
+    rockPaperScissorsButtons.forEach((button) => {
+        button.addEventListener('click', (e)=> {
+            let playerSelection = e.target.id;
+            let computerSelection = computerPlay();
+            let result = playRound(playerSelection, computerSelection);
             
-    });
-});
+            //this updates and reports score
+            updateGameScore(result);
+            
+            //hide game buttons
+            toggleGameButtons();
+    
+            //show player and computer choices
+            togglePlayerVsComputerDisplay();
+            setTimeout(togglePlayerVsComputerDisplay, 2000);
+            setTimeout(toggleDisplayWinner,2000);
+            setTimeout(toggleDisplayWinner,4000);
+            setTimeout(toggleNextRoundMessage,4000);
+            setTimeout(toggleNextRoundMessage,6000);
+            setTimeout(toggleGameButtons,6000);
+            
+            //check to see if play continues
+            checkIfGameOver(result);
+    
+            console.log(computerSelection);
+            console.log(playerSelection);
+            console.log(result);
+            console.log (gameScore);
+                
+        });
+    }); 
+
 
 
 //******* DOM FUNCTIONS *******//
 
-const gameButtons = document.querySelector('.game-buttons');
-const gameInfo = document.querySelector('.game-info-container');
 
-const playButton = document.getElementById('play-btn');
-
-const resetBtn = document.getElementById('reset');
-
-const gameInstructions = document.querySelector('.instructions');
 
 // Hide play button and show default game (this happens when player clicks play button)
 playButton.addEventListener('click', function(event){
-   //pass game buttons div to var
-   //selectGamebuttons.classList.toggle('hidden');
+    console.log('play button clicked');
+   //hide 'play' button
    playButton.classList.toggle('hidden');
-   gameInstructions.classList.toggle('hidden');
-   gameButtons.classList.toggle('hidden');
+   toggleGameButtons();
    gameInfo.classList.toggle('hidden');
-   
-   console.log(gameButtons.classList);
-    console.log('Button Clicked');
+
 });
 
 
-//this function hides the rock/paper/scissors buttons that were NOT selected and needs to be called in the gameplay callback after choice is made...then the stage nees to be reset for round 2.
-
-
-
-
-
-
-resetBtn.addEventListener('click', function(event){
-   //pass game buttons div to var
-   console.log(gameButtons.classList);
-   gameButtons.classList.toggle('hidden');
-   gameInstructions.classList.toggle('hidden');
-   playButton.classList.toggle('hidden');
-   gameInfo.classList.toggle('hidden');
+// resetBtn.addEventListener('click', function(event){
+//    //pass game buttons div to var
+//    console.log(gameButtonsContainer.classList);
+//    gameButtonsContainer.classList.toggle('hidden');
+//    gameInstructions.classList.toggle('hidden');
+//    playButton.classList.toggle('hidden');
+//    gameInfo.classList.toggle('hidden');
    
-});
+// });
 
 
 
