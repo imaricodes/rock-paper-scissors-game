@@ -25,6 +25,19 @@
   
   }
 
+  .title {
+    background-color: green;
+  
+}
+
+.game-buttons-container{
+  background-color: red;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 200px;
+  border: 2px solid blue;
+}
 
   .game-info-container {
       width: auto;
@@ -35,14 +48,21 @@
       align-items: center;
       flex-direction: column;
       border: 2px solid blue;
-      
-     
     }
 
     .round-play-display{
       align-items: flex-start;
       border: 2px solid blue;
     }
+
+    .playerVsComputer-display{
+
+    }
+
+    .winner-display{
+      
+    }
+    
     
     .round-indicator {
     background-color: pink;
@@ -61,30 +81,25 @@
     flex-direction: column;
     align-items: center;
     width: auto;
-    background-color: greenyellow;
-  }
-  .game-buttons-container{
-      background-color: red;
-      
-      width: auto;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 200px;
-      border: 2px solid blue;
   }
 
+  .player-score-display{
+    display: flex;
+    background-color: greenyellow;
+    justify-content: center;
+  }
+
+  .computer-score-display{
+    display: flex;
+    background-color: greenyellow;
+    justify-content: center;
+  }
 
   .footer {
     display: flex;
     margin-top: auto;
     background-color: #eeeeee;
     padding: 20px;
-  }
-
-
-  .title {
-      background-color: green;
-    
   }
 
   .rockPaperScissors-btn {
