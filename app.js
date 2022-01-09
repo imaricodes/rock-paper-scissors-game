@@ -27,7 +27,6 @@ const resetBtn = document.getElementById('reset');
 //SHOW HIDE TOGGLE FUNCTIONS
 function toggleGameButtons (){
     gameButtonsContainer.classList.toggle('hidden');
-    //togglePlayerVsComputerDisplay();  
 }
 
 function togglePlayerVsComputerDisplay() {
@@ -70,8 +69,8 @@ function playRound(playerSelection, computerSelection){
 
 
 function updateGameScore (result){
-    let playerScoreDisplay = document.getElementById('playerScore');
-    let computerScoreDisplay = document.getElementById('computerScore');
+    let playerScoreDisplay = document.querySelector('.player-score-display');
+    let computerScoreDisplay = document.querySelector('.computer-score-display');
 
     if (result === "player wins"){
         gameScore.player += 1;
