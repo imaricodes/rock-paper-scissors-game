@@ -1,9 +1,9 @@
 //GLOBAL VARIABLES
 
-let gameScore = {
+let gameStats = {
     player: 0,
     computer: 0,
-    round: 0
+    round: 1
 };
 
 const playButton = document.getElementById('play-btn');
@@ -68,24 +68,37 @@ function playRound(playerSelection, computerSelection){
 };
 
 
-function updateGameScore (result){
+function updateGameStats (result){
     let playerScoreDisplay = document.querySelector('.player-score-display');
     let computerScoreDisplay = document.querySelector('.computer-score-display');
 
     if (result === "player wins"){
-        gameScore.player += 1;
-        playerScoreDisplay.innerHTML = gameScore.player;
+        gameStats.player += 1;
+        
+        playerScoreDisplay.innerHTML = gameStats.player;
       
     }
     else if (result === "computer wins"){
-        gameScore.computer += 1;
-        computerScoreDisplay.innerHTML = gameScore.computer;
+        gameStats.computer += 1;
+       
+        computerScoreDisplay.innerHTML = gameStats.computer;
     };
     
 };
 
+//should i keep these functions separate?
+function advanceRoundCounter() {
+    gameStats.round += 1;
+    updateRoundCounterDisplay();
+}
+
+function updateRoundCounterDisplay (){
+    let roundCounter = document.querySelector('.round-indicator');
+    roundCounter.innerHTML =`Round: ${gameStats.round}`;
+}
+
 function checkIfGameOver() {
-    if (gameScore.player + gameScore.computer === 3){
+    if (gameStats.player || gameStats.computer === 2){
         console.log("Round ___ over!");
     }
     
@@ -98,41 +111,38 @@ function checkIfGameOver() {
 //all of this will be wrapped in a loop
 
 
-
-
- 
-
-
-
-
     rockPaperScissorsButtons.forEach((button) => {
         button.addEventListener('click', (e)=> {
             let playerSelection = e.target.id;
             let computerSelection = computerPlay();
             let result = playRound(playerSelection, computerSelection);
-            
+
+            console.log(gameStats.round);
             //this updates and reports score
-            updateGameScore(result);
+            updateGameStats(result);
+            //advanceRoundCounter();
+            //updateRoundCounterDisplay();
             
             //hide game buttons
             toggleGameButtons();
-    
+
             //show player and computer choices
             togglePlayerVsComputerDisplay();
             setTimeout(togglePlayerVsComputerDisplay, 2000);
             setTimeout(toggleDisplayWinner,2000);
             setTimeout(toggleDisplayWinner,4000);
+            if(gameStats.round === 3) {console.log("ok here's the interruption")};
             setTimeout(toggleNextRoundMessage,4000);
             setTimeout(toggleNextRoundMessage,6000);
             setTimeout(toggleGameButtons,6000);
+            setTimeout(advanceRoundCounter,6000);
             
             //check to see if play continues
             checkIfGameOver(result);
-    
             console.log(computerSelection);
             console.log(playerSelection);
             console.log(result);
-            console.log (gameScore);
+            console.log (gameStats);
                 
         });
     }); 
@@ -146,6 +156,7 @@ function checkIfGameOver() {
 // Hide play button and show default game (this happens when player clicks play button)
 playButton.addEventListener('click', function(event){
     console.log('play button clicked');
+    
    //hide 'play' button
    playButton.classList.toggle('hidden');
    toggleGameButtons();
